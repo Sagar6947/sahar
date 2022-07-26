@@ -6,7 +6,7 @@ include 'db_connect.php';
 
 
 
-<div id="main-wrapper sss">
+<div id="main-wrapper">
 
 
     <!-- Start Navigation -->
