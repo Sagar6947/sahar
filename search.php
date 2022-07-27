@@ -10,23 +10,8 @@ include 'db_connect.php';
 
 
     <!-- Start Navigation -->
-    <?php include 'includes/header.php' ?>
+    <?php include 'includes/header2.php' ?>
     <!-- End Navigation -->
-
-    <div class="bg-dark py-3">
-        <div class="container" style="padding-top: 5%;">
-            <div class="row">
-                <div class="colxl-12 col-lg-12 col-md-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php" class="text-light">Home > </a></li>
-                            <li class="breadcrumb-item active theme-cl" aria-current="page">listings</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <section class="space min gray">

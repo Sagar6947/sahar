@@ -10,23 +10,10 @@ include 'db_connect.php';
 
 
     <!-- Start Navigation -->
-    <?php include 'includes/header.php' ?>
+    <?php include 'includes/header2.php' ?>
     <!-- End Navigation -->
 
-    <div class="bg-dark py-3">
-        <div class="container" style="padding-top: 5%;">
-            <div class="row">
-                <div class="colxl-12 col-lg-12 col-md-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php" class="text-light">Home > </a></li>
-                            <li class="breadcrumb-item active theme-cl" aria-current="page">Services</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
     <section class="space min gray">
@@ -137,146 +124,75 @@ include 'db_connect.php';
     </section>
 
     <section class="space min">
-        <div class="container">
+		<div class="container">
 
-            <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-4">
-                        <h6 class="theme-cl mb-0">Latest Blogs</h6>
-                        <h2 class="ft-bold">Pickup New Updates</h2>
-                    </div>
-                </div>
-            </div>
+			<div class="row justify-content-center">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+					<div class="sec_title position-relative text-center mb-4">
+						<h6 class="theme-cl mb-0">Latest Blogs</h6>
+						<h2 class="ft-bold">Pickup New Updates</h2>
+					</div>
+				</div>
+			</div>
 
-            <div class="row justify-content-center">
+			<div class="row justify-content-center">
 
-                <!-- Single Item -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="gup_blg_grid_box">
-                        <div class="gup_blg_grid_thumb">
-                            <a href=""><img src="assets/img/b-4.jpg" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="gup_blg_grid_caption">
-                            <div class="blg_tag"><span>Marketing</span></div>
-                            <div class="blg_title">
-                                <h4><a href="">What Is a VPN and How Does It Work?</a></h4>
-                            </div>
-                            <div class="blg_desc">
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                            </div>
-                        </div>
-                        <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
-                                <div class="crs_fl_first">
-                                    <div class="crs_tutor">
-                                        <div class="crs_tutor_thumb"><a href="javascript:void(0);"><img src="assets/img/team-2.jpg" class="img-fluid circle" width="35" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="crs_fl_last">
-                                    <div class="foot_list_info">
-                                        <ul>
-                                            <li>
-                                                <div class="elsio_ic"><i class="fa fa-eye text-success"></i></div>
-                                                <div class="elsio_tx">10k Views</div>
-                                            </li>
-                                            <li>
-                                                <div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div>
-                                                <div class="elsio_tx">10 July 2021</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<?php
+				$blog_selt = "SELECT * FROM `blog`";
+				$result = mysqli_query($conn, $blog_selt) or die("Query Failed");
+				if (mysqli_num_rows($result) > 0) {
+					while ($blog = mysqli_fetch_assoc($result)) {
+				?>
+						<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+							<div class="gup_blg_grid_box">
+								<div class="gup_blg_grid_thumb">
+									<a href=""><img src="uploads/blogs/<?php echo 'blog-min.jpg'; ?>" class="img-fluid" alt=""></a>
+								</div>
+								<div class="gup_blg_grid_caption">
 
-                <!-- Single Item -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="gup_blg_grid_box">
-                        <div class="gup_blg_grid_thumb">
-                            <a href=""><img src="assets/img/b-5.jpg" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="gup_blg_grid_caption">
-                            <div class="blg_tag"><span>Business</span></div>
-                            <div class="blg_title">
-                                <h4><a href="">What Is Ransomware: The Ultimate Guide?</a></h4>
-                            </div>
-                            <div class="blg_desc">
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                            </div>
-                        </div>
-                        <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
-                                <div class="crs_fl_first">
-                                    <div class="crs_tutor">
-                                        <div class="crs_tutor_thumb"><a href="javascript:void(0);"><img src="assets/img/team-3.jpg" class="img-fluid circle" width="35" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="crs_fl_last">
-                                    <div class="foot_list_info">
-                                        <ul>
-                                            <li>
-                                                <div class="elsio_ic"><i class="fa fa-eye text-success"></i></div>
-                                                <div class="elsio_tx">10k Views</div>
-                                            </li>
-                                            <li>
-                                                <div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div>
-                                                <div class="elsio_tx">10 July 2021</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+									<div class="blg_title">
+										<h4><a href=""><?php echo $blog['blog_name']; ?></a></h4>
+									</div>
+									<div class="blg_desc">
+										<p><?php echo $blog['blog_content']; ?></p>
+									</div>
+								</div>
+								<div class="crs_grid_foot">
+									<div class="crs_flex br-top px-3 py-2">
+										<div class="crs_fl_last">
+											<div class="foot_list_info">
+												<ul class="blog_ul">
+													<li>
+														<div class="elsio_ic"><i class="fa fa-eye text-success"></i></div>
+														<a href="">Read More</a>
+													</li>
+													<li class="text-right">
+														<div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div>
+														<div class="elsio_tx"><?php echo date_format(date_create($blog['created_date']), 'd M ,Y') ?></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				<?php
+					}
+				}
+				?>
+				<!-- Single Item -->
 
-                <!-- Single Item -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="gup_blg_grid_box">
-                        <div class="gup_blg_grid_thumb">
-                            <a href=""><img src="assets/img/b-6.jpg" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="gup_blg_grid_caption">
-                            <div class="blg_tag"><span>Accounting</span></div>
-                            <div class="blg_title">
-                                <h4><a href="">Can iPads Get Viruses? What You Need</a></h4>
-                            </div>
-                            <div class="blg_desc">
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                            </div>
-                        </div>
-                        <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
-                                <div class="crs_fl_first">
-                                    <div class="crs_tutor">
-                                        <div class="crs_tutor_thumb"><a href="javascript:void(0);"><img src="assets/img/team-5.jpg" class="img-fluid circle" width="35" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="crs_fl_last">
-                                    <div class="foot_list_info">
-                                        <ul>
-                                            <li>
-                                                <div class="elsio_ic"><i class="fa fa-eye text-success"></i></div>
-                                                <div class="elsio_tx">10k Views</div>
-                                            </li>
-                                            <li>
-                                                <div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div>
-                                                <div class="elsio_tx">10 July 2021</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
 
-        </div>
-    </section>
+			</div>
+
+			<div class="flex-box">
+				<a href="blog.php" class="btn btn-md rounded hover-theme home_btn">View More<i class="lni lni-arrow-right-circle ms-2"></i></a>
+			</div>
+
+		</div>
+	</section>
 
     <?php include 'includes/footer.php' ?>
 

@@ -6692,13 +6692,13 @@ button.aps-clone {
     display: inline-flex;
     padding: 10px 20px;
     font-weight: 500;
-    height: 50px;
+    height: 40px;
     color: #f41b3b;
     background: #ffffff;
     z-index: 1;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 20px;
 }
 .abs-list-sec {
     position: absolute;
@@ -8194,6 +8194,9 @@ footer.skin-dark-footer ul.footer-bottom-social li a:hover, footer.skin-dark-foo
     .pabs{
         right: 0px;
     }
+    .abs-list-sec{
+        bottom: 15px;
+    }
 }
 
 
@@ -8272,4 +8275,12 @@ footer.skin-dark-footer ul.footer-bottom-social li a:hover, footer.skin-dark-foo
 
   .blog_ul li{
     margin-left: 0 !important;
+  }
+
+  .w-100{
+    width: 100% !important;
+  }
+
+  .abs-list-sec.right_pos{
+    right: 200px !important;
   }

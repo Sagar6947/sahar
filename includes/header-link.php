@@ -13,6 +13,9 @@
        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 		 
         <!-- Custom CSS -->
+		<link href="assets/js/plugins/morris.js/morris.css" rel="stylesheet">
+		 
+        <!-- Custom CSS -->
         <link href="assets/css/styles.css" rel="stylesheet">
 		
     </head>

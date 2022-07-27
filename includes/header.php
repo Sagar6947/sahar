@@ -8,8 +8,8 @@
                 <div class="mobile_nav">
                     <ul>
                         <li>
-                            <a href="" class="crs_yuo12 w-auto text-white theme-bg">
-                                <span class="embos_45"><i class="fas fa-plus me-2"></i>Add Listing</span>
+                            <a href="login.php" class="crs_yuo12 w-auto text-white theme-bg">
+                                <span class="embos_45"><i class="fas fa-user me-2"></i>Login</span>
                             </a>
                         </li>
                     </ul>
@@ -17,7 +17,7 @@
             </div>
             <div class="nav-menus-wrapper" style="transition-property: none;">
                 <ul class="nav-menu pabs">
-                    <li class="active"><a href="./index.php">Home</a>
+                    <li class=""><a href="./index.php">Home</a>
                     </li>
                     <li><a href="blog.php">Blogs</a>
                     </li>
@@ -32,8 +32,8 @@
                         </a>
                     </li> -->
                     <li class="add-listing">
-                        <a href="">
-                            <i class="fas fa-plus me-2"></i>Add Listing
+                        <a href="login.php">
+                            <i class="fas fa-user me-2"></i>Login
                         </a>
                     </li>
                 </ul>
