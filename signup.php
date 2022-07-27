@@ -1,5 +1,41 @@
 <?php include 'includes/header-link.php';
 include 'db_connect.php';
+
+session_start();
+
+if(isset($_SESSION["username"])){
+  header("Location: {$hostname}dashboard.php");
+}
+
+
+
+if (isset($_POST['save'])) {
+	include "db_connect.php";
+
+	$name = mysqli_real_escape_string($conn, $_POST['name']);
+	$mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$password = mysqli_real_escape_string($conn, $_POST['password']);
+
+	$sql = "SELECT email FROM tbl_registration WHERE email = '{$email}'";
+
+	$result = mysqli_query($conn, $sql) or die("Query Failed.");
+
+	if (mysqli_num_rows($result) > 0) {
+		echo "<p style='color:red;text-align:center;margin: 10px 0;'>UserName already Exists.</p>";
+	} else {
+		$sql1 = "INSERT INTO tbl_registration (name, mobile, email, password)
+				VALUES ('{$name}','{$mobile}','{$email}','{$password}')";
+		if (mysqli_query($conn, $sql1)) {
+			header("Location: {$hostname}/login.php");
+		} else {
+			echo "<p style='color:red;text-align:center;margin: 10px 0;'>Can't Insert User.</p>";
+		}
+	}
+}
+
+
+
 ?>
 
 
@@ -13,57 +49,57 @@ include 'db_connect.php';
 	<?php include 'includes/header2.php' ?>
 	<!-- End Navigation -->
 	<section class="gray">
-				<div class="container">
-					<div class="row align-items-start justify-content-center">
-						<div class="col-xl-6 col-lg-8 col-md-12">
-							
-							<div class="signup-screen-wrap">
-								<div class="signup-screen-single light">
-									<div class="text-center mb-4">
-										<h4 class="m-0 ft-medium">Create An Account</h4>
-									</div>
-									
-									<form class="submit-form">
-										<div class="row">
-											<div class="col-6">
-												<div class="form-group">
-													<label class="mb-1">Your Name</label>
-													<input type="text" class="form-control rounded" placeholder="Amit Kumar">
-												</div>
-											</div>
-											<div class="col-6">
-												<div class="form-group">
-												<label class="mb-1">Email ID</label>
-												<input type="text" class="form-control rounded" placeholder="kumaramit@gmail.com">
-											</div>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="mb-1">User Name</label>
-											<input type="text" class="form-control rounded" placeholder="Username*">
-										</div>
-										
-										<div class="form-group">
-											<label class="mb-1">Password</label>
-											<input type="password" class="form-control rounded" placeholder="Password*">
-										</div>
-										
-										<div class="form-group">
-											<button type="submit" class="btn btn-md full-width bg-sky text-light rounded ft-medium">Sign Up</button>
-										</div>
+		<div class="container">
+			<div class="row align-items-start justify-content-center">
+				<div class="col-xl-6 col-lg-8 col-md-12">
 
-										
-										<div class="form-group text-center mt-4 mb-0">
-											<p class="mb-0">Have You Already An account? <a href="login.php" class="ft-medium text-success">Sign In</a></p>
-										</div>
-									</form>
-								</div>
+					<div class="signup-screen-wrap">
+						<div class="signup-screen-single light">
+							<div class="text-center mb-4">
+								<h4 class="m-0 ft-medium">Create An Account</h4>
 							</div>
-							
+
+							<form class="submit-form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+								<div class="row">
+									<div class="col-6">
+										<div class="form-group">
+											<label class="mb-1">Your Name</label>
+											<input type="text" class="form-control rounded" name="name">
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="form-group">
+											<label class="mb-1">Mobile No</label>
+											<input type="text" class="form-control rounded" name="mobile">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="mb-1">Email ID</label>
+									<input type="text" class="form-control rounded" name="email">
+								</div>
+
+								<div class="form-group">
+									<label class="mb-1">Password</label>
+									<input type="password" class="form-control rounded" name="password">
+								</div>
+
+								<div class="form-group">
+									<button type="submit" name="save" class="btn btn-md full-width bg-sky text-light rounded ft-medium">Sign Up</button>
+								</div>
+
+
+								<div class="form-group text-center mt-4 mb-0">
+									<p class="mb-0">Have You Already An account? <a href="login.php" class="ft-medium text-success">Sign In</a></p>
+								</div>
+							</form>
 						</div>
 					</div>
+
 				</div>
-			</section>
+			</div>
+		</div>
+	</section>
 
 	<section class="space min">
 		<div class="container">
@@ -143,4 +179,4 @@ include 'db_connect.php';
 <!-- End Wrapper -->
 <!-- ============================================================== -->
 
-<?php include 'includes/footer-link.php' ?>	
+<?php include 'includes/footer-link.php' ?>

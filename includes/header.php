@@ -23,6 +23,16 @@
                     </li>
                     <li><a href="view-services.php">Listing</a>
                     </li>
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['username'])) {
+                    ?>
+                        <li><a href="dashboard.php">Dashboard</a>
+                        </li>
+                    <?php
+                    }
+                    ?>
+
                 </ul>
 
                 <ul class="nav-menu nav-menu-social align-to-right">
@@ -31,11 +41,25 @@
                             <i class="fas fa-sign-in-alt me-1 theme-cl"></i>Sign In
                         </a>
                     </li> -->
-                    <li class="add-listing">
-                        <a href="login.php">
-                            <i class="fas fa-user me-2"></i>Login
-                        </a>
-                    </li>
+                    <?php
+					if (isset($_SESSION['username'])) {
+					?>
+						<li class="add-listing gray">
+							<a href="logout.php">
+                            <i class="lni lni-user mr-1"></i> Logout
+							</a>
+						</li>
+					<?php
+					} else {
+					?>
+						<li class="add-listing gray">
+							<a href="login.php">
+                                <i class="lni lni-power-switch mr-1"></i> Login
+							</a>
+						</li>
+					<?php
+					}
+					?>
                 </ul>
             </div>
         </nav>

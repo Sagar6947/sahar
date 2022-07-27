@@ -1,4 +1,12 @@
-<?php include 'includes/header-link.php' ?>
+<?php include 'includes/header-link.php';
+session_start();
+
+if(!isset($_SESSION["username"])){
+  header("Location: {$hostname}login.php");
+}
+?>
+
+?>
 
 
 <div id="main-wrapper">

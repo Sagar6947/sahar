@@ -13,7 +13,7 @@
         <ul data-submenu-title="My Accounts">
           <li><a href="dashboard-my-profile.php"><i class="lni lni-user me-2"></i>My Profile </a></li>
           <!-- <li><a href="dashboard-change-password.html"><i class="lni lni-lock-alt me-2"></i>Change Password</a></li> -->
-          <li><a href="login.php"><i class="lni lni-power-switch me-2"></i>Log Out</a></li>
+          <li><a href="logout.php"><i class="lni lni-power-switch me-2"></i>Log Out</a></li>
         </ul>
       </div>
     </div>

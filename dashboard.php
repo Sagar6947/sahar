@@ -1,4 +1,11 @@
-<?php include 'includes/header-link.php' ?>
+<?php include 'includes/header-link.php';
+
+session_start();
+
+if(!isset($_SESSION["username"])){
+  header("Location: {$hostname}login.php");
+}
+?>
 
 
 <div id="main-wrapper">
@@ -19,7 +26,7 @@
 			<div class="dashboard-tlbar d-block mb-5">
 				<div class="row">
 					<div class="colxl-12 col-lg-12 col-md-12">
-						<h1 class="ft-medium">Hello, Darnell Johns</h1>
+						<h1 class="ft-medium">Hello, <?php  echo $_SESSION['name']; ?></h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item text-muted"><a href="index.php">Home</a></li>
@@ -31,14 +38,6 @@
 			</div>
 
 			<div class="dashboard-widg-bar d-block">
-				<div class="row">
-					<div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-						<div class="alert bg-inverse text-light d-flex align-items-center" role="alert">
-							<p class="p-0 m-0 ft-medium full-width">Your listing <a href="#" class="text-success">Wedding Willa Resort</a> has been approved!</p>
-							<button type="button" class="btn-close text-light" data-bs-dismiss="alert" aria-label="Close"></button>
-						</div>
-					</div>
-				</div>
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
 						<div class="dsd-boxed-widget py-5 px-4 bg-danger rounded">
