@@ -6,9 +6,6 @@ if(!isset($_SESSION["username"])){
 }
 ?>
 
-?>
-
-
 <div id="main-wrapper">
 
 

@@ -9,7 +9,7 @@ include 'db_connect.php';
     <?php include 'includes/header2.php' ?>
     <!-- End Navigation -->
 
-  
+
 
     <section class="middle">
         <div class="container">
@@ -34,12 +34,12 @@ include 'db_connect.php';
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                             <div class="gup_blg_grid_box">
                                 <div class="gup_blg_grid_thumb">
-                                    <a href=""><img src="uploads/blogs/<?php echo 'blog-min.jpg'; ?>" class="img-fluid" alt=""></a>
+                                    <a href="blog-detail.php?blog=<?php echo $blog['blog_id']; ?>"><img src="uploads/blogs/<?php echo 'blog-min.jpg'; ?>" class="img-fluid" alt=""></a>
                                 </div>
                                 <div class="gup_blg_grid_caption">
-                                    
+
                                     <div class="blg_title">
-                                        <h4><a href=""><?php echo $blog['blog_name']; ?></a></h4>
+                                        <h4><a href="blog-detail.php?blog=<?php echo $blog['blog_id']; ?>"><?php echo $blog['blog_name']; ?></a></h4>
                                     </div>
                                     <div class="blg_desc">
                                         <p><?php echo $blog['blog_content']; ?></p>
@@ -52,7 +52,7 @@ include 'db_connect.php';
                                                 <ul class="blog_ul">
                                                     <li>
                                                         <div class="elsio_ic"><i class="fa fa-eye text-success"></i></div>
-                                                        <a href="">Read More</a>
+                                                        <a href="blog-detail.php?blog=<?php echo $blog['blog_id']; ?>">Read More</a>
                                                     </li>
                                                     <li class="text-right">
                                                         <div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div>

@@ -7,8 +7,6 @@ if(isset($_SESSION["username"])){
   header("Location: {$hostname}dashboard.php");
 }
 
-
-
 if (isset($_POST['save'])) {
 	include "db_connect.php";
 
@@ -27,7 +25,7 @@ if (isset($_POST['save'])) {
 		$sql1 = "INSERT INTO tbl_registration (name, mobile, email, password)
 				VALUES ('{$name}','{$mobile}','{$email}','{$password}')";
 		if (mysqli_query($conn, $sql1)) {
-			header("Location: {$hostname}/login.php");
+			header("Location: {$hostname}login.php");
 		} else {
 			echo "<p style='color:red;text-align:center;margin: 10px 0;'>Can't Insert User.</p>";
 		}
