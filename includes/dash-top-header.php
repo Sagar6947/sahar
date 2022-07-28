@@ -1,6 +1,6 @@
 <section class="bg-cover position-relative" style="background:red url(assets/img/cover.jpg) no-repeat;" data-overlay="3">
 			<div class="abs-list-sec right_pos"><a href="" class="add-list-btn"><i class="fas fa-plus me-2"></i>Generate Vcard</a></div>
-			<div class="abs-list-sec"><a href="" class="add-list-btn"><i class="fas fa-plus me-2"></i>Add Listing</a></div>
+			<div class="abs-list-sec"><a href="dashboard-add-listing.php" class="add-list-btn"><i class="fas fa-plus me-2"></i>Add Listing</a></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">

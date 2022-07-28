@@ -57,7 +57,7 @@ if (isset($_POST['save'])) {
 								<h4 class="m-0 ft-medium">Create An Account</h4>
 							</div>
 
-							<form class="submit-form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+							<form class="submit-form" method="POST" action="insert.php">
 								<div class="row">
 									<div class="col-6">
 										<div class="form-group">
@@ -83,9 +83,8 @@ if (isset($_POST['save'])) {
 								</div>
 
 								<div class="form-group">
-									<button type="submit" name="save" class="btn btn-md full-width bg-sky text-light rounded ft-medium">Sign Up</button>
+									<button type="submit" name="user_sighup" class="btn btn-md full-width bg-sky text-light rounded ft-medium">Sign Up</button>
 								</div>
-
 
 								<div class="form-group text-center mt-4 mb-0">
 									<p class="mb-0">Have You Already An account? <a href="login.php" class="ft-medium text-success">Sign In</a></p>
