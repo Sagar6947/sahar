@@ -29,8 +29,8 @@ if(isset($_SESSION["username"])){
 
 							<form class="submit-form" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
 								<div class="form-group">
-									<label class="mb-1">User Name</label>
-									<input type="text" class="form-control rounded" name="email">
+									<label class="mb-1">Number</label>
+									<input type="number" class="form-control rounded" name="number">
 								</div>
 
 								<div class="form-group">
@@ -62,22 +62,21 @@ if(isset($_SESSION["username"])){
 							<?php
 							if (isset($_POST['login'])) {
 								include "db_connect.php";
-								if(empty($_POST['email']) || empty($_POST['password'])){
+								if(empty($_POST['number']) || empty($_POST['password'])){
 									echo '<div class="alert alert-danger">All Fields must be entered.</div>';
 									die();
 								  }else{
-									$username = mysqli_real_escape_string($conn, $_POST['email']);
+									$username = $_POST['number'];
 									$password = $_POST['password'];
-	  
-									$sql = "SELECT email, password, name FROM tbl_registration WHERE email = '{$username}' AND password = '{$password}'";
-	  
+
+									$sql = "SELECT mobile, password, name FROM tbl_registration WHERE mobile = '{$username}' AND password = '{$password}'";
+
 									$result = mysqli_query($conn, $sql) or die("Query Failed.");
-	  
+
 									if(mysqli_num_rows($result) > 0){
 
 										while ($row = mysqli_fetch_assoc($result)) {
-											session_start();
-											$_SESSION["username"] = $row['email'];
+											$_SESSION["username"] = $row['mobile'];
 											$_SESSION["name"] = $row['name'];
 											$_SESSION["id"] = $row['rgid'];
 

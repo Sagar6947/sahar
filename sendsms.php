@@ -53,8 +53,6 @@ function SMSSend($phone, $msg, $debug=false){
     $url.= '&unicode=0';
     $url.= '&dlttemplateid=1707165470454229593';
 
-    
-
     $urltouse =  $smsurl.$url;
     
     // echo $urltouse;

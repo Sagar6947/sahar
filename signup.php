@@ -62,24 +62,24 @@ if (isset($_POST['save'])) {
 									<div class="col-6">
 										<div class="form-group">
 											<label class="mb-1">Your Name</label>
-											<input type="text" class="form-control rounded" name="name">
+											<input type="text" class="form-control rounded" name="name" required>
 										</div>
 									</div>
 									<div class="col-6">
 										<div class="form-group">
 											<label class="mb-1">Mobile No</label>
-											<input type="text" class="form-control rounded" name="mobile">
+											<input type="text" class="form-control rounded" name="mobile" required>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="mb-1">Email ID</label>
-									<input type="text" class="form-control rounded" name="email">
+									<input type="text" class="form-control rounded" name="email" required>
 								</div>
 
 								<div class="form-group">
 									<label class="mb-1">Password</label>
-									<input type="password" class="form-control rounded" name="password">
+									<input type="password" class="form-control rounded" name="password" required>
 								</div>
 
 								<div class="form-group">
