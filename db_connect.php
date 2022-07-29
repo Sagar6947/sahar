@@ -9,3 +9,5 @@ $conn = mysqli_connect("localhost", "exzpblvz_sahar_user", "d?Ec(YNe,d}h", "exzp
 
 // $conn = mysqli_connect("localhost", "rewaruga_harsha", "M=4qtas@o]9W", "rewaruga_review") or die("Error " . mysqli_error($conn));
 ?>
+
+<!-- database -->
