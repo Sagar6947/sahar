@@ -3,8 +3,8 @@ include 'db_connect.php';
 
 session_start();
 
-if(isset($_SESSION["username"])){
-  header("Location: {$hostname}dashboard.php");
+if (isset($_SESSION["username"])) {
+	header("Location: {$hostname}dashboard.php");
 }
 
 if (isset($_POST['save'])) {
@@ -77,9 +77,15 @@ if (isset($_POST['save'])) {
 									<input type="text" class="form-control rounded" name="email" required>
 								</div>
 
-								<div class="form-group">
+								<div class="form-group password">
 									<label class="mb-1">Password</label>
 									<input type="password" class="form-control rounded" name="password" required>
+									<i class="fas fa-eye"></i>
+								</div>
+								<div class="form-group cpassword">
+									<label class="mb-1">Confirm Password</label>
+									<input type="password" class="form-control rounded" name="password" required>
+									<i class="fas fa-eye"></i>
 								</div>
 
 								<div class="form-group">
@@ -172,6 +178,33 @@ if (isset($_POST['save'])) {
 	<?php include 'includes/footer.php' ?>
 
 </div>
+
+<script>
+	const pswrdField = document.querySelector(".submit-form .form-group input[type='password']"),
+		toggleIcon = document.querySelector(".submit-form .form-group i");
+
+	toggleIcon.onclick = () => {
+		if (pswrdField.type === "password") {
+			pswrdField.type = "text";
+			toggleIcon.classList.add("active");
+		} else {
+			pswrdField.type = "password";
+			toggleIcon.classList.remove("active");
+		}
+	}
+	const pswrdField2 = document.querySelector(".submit-form .cpassword input[type='password']"),
+		toggleIcon2 = document.querySelector(".submit-form .cpassword i");
+
+	toggleIcon2.onclick = () => {
+		if (pswrdField2.type === "password") {
+			pswrdField2.type = "text";
+			toggleIcon2.classList.add("active");
+		} else {
+			pswrdField2.type = "password";
+			toggleIcon2.classList.remove("active");
+		}
+	}
+</script>
 <!-- ============================================================== -->
 <!-- End Wrapper -->
 <!-- ============================================================== -->

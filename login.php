@@ -3,8 +3,8 @@ include 'db_connect.php';
 
 session_start();
 
-if(isset($_SESSION["username"])){
-  header("Location: {$hostname}dashboard.php");
+if (isset($_SESSION["username"])) {
+	header("Location: {$hostname}dashboard.php");
 }
 
 ?>
@@ -33,9 +33,10 @@ if(isset($_SESSION["username"])){
 									<input type="number" class="form-control rounded" name="number">
 								</div>
 
-								<div class="form-group">
+								<div class="form-group password">
 									<label class="mb-1">Password</label>
 									<input type="password" class="form-control rounded" name="password">
+									<i class="fas fa-eye"></i>
 								</div>
 
 								<div class="form-group">
@@ -45,7 +46,7 @@ if(isset($_SESSION["username"])){
 													<label for="dd" class="checkbox-custom-label w-100">Remember Me</label>
 												</div>	 -->
 										<div class="eltio_k2">
-											<a href="#" class="theme-cl">Lost Your Password?</a>
+											<!-- <a href="#" class="theme-cl">Lost Your Password?</a> -->
 										</div>
 									</div>
 								</div>
@@ -62,10 +63,10 @@ if(isset($_SESSION["username"])){
 							<?php
 							if (isset($_POST['login'])) {
 								include "db_connect.php";
-								if(empty($_POST['number']) || empty($_POST['password'])){
+								if (empty($_POST['number']) || empty($_POST['password'])) {
 									echo '<div class="alert alert-danger">All Fields must be entered.</div>';
 									die();
-								  }else{
+								} else {
 									$username = $_POST['number'];
 									$password = $_POST['password'];
 
@@ -73,7 +74,7 @@ if(isset($_SESSION["username"])){
 
 									$result = mysqli_query($conn, $sql) or die("Query Failed.");
 
-									if(mysqli_num_rows($result) > 0){
+									if (mysqli_num_rows($result) > 0) {
 
 										while ($row = mysqli_fetch_assoc($result)) {
 											$_SESSION["username"] = $row['mobile'];
@@ -172,6 +173,22 @@ if(isset($_SESSION["username"])){
 	<?php include 'includes/footer.php' ?>
 
 </div>
+
+
+<script>
+	const pswrdField = document.querySelector(".submit-form .form-group input[type='password']"),
+		toggleIcon = document.querySelector(".submit-form .form-group i");
+
+	toggleIcon.onclick = () => {
+		if (pswrdField.type === "password") {
+			pswrdField.type = "text";
+			toggleIcon.classList.add("active");
+		} else {
+			pswrdField.type = "password";
+			toggleIcon.classList.remove("active");
+		}
+	}
+</script>
 <!-- ============================================================== -->
 <!-- End Wrapper -->
 <!-- ============================================================== -->
