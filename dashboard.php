@@ -2,8 +2,8 @@
 
 session_start();
 
-if(!isset($_SESSION["username"])){
-  header("Location: {$hostname}login.php");
+if (!isset($_SESSION["username"])) {
+	header("Location: {$hostname}login.php");
 }
 ?>
 
@@ -26,7 +26,7 @@ if(!isset($_SESSION["username"])){
 			<div class="dashboard-tlbar d-block mb-5">
 				<div class="row">
 					<div class="colxl-12 col-lg-12 col-md-12">
-						<h1 class="ft-medium">Hello, <?php  echo $_SESSION['name']; ?></h1>
+						<h1 class="ft-medium">Hello, <?php echo $_SESSION['name']; ?></h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item text-muted"><a href="index.php">Home</a></li>
@@ -70,11 +70,47 @@ if(!isset($_SESSION["username"])){
 				</div>
 
 				<!-- row -->
+			</div>
+
+			<!-- footer -->
+
+			<div class="row">
+
+				<!-- Area Chart -->
+				<div class="col-md-12 col-sm-12">
+					<div class="dash-card">
+						<div class="dash-card-header">
+							<h4 class="mb-0">Enquiry</h4>
+						</div>
+						<div class="dash-card-body" style="padding: 10px;">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">S no.</th>
+										<th scope="col">Name</th>
+										<th scope="col">Email</th>
+										<th scope="col">Message</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Sagar Thakur</td>
+										<td>sagarthakur@gmail.com</td>
+										<td>This is awesome</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- Donut Chart -->
 
 
 			</div>
 
-			<!-- footer -->
+
 
 		</div>
 

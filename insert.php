@@ -70,6 +70,7 @@ if (isset($_POST['user_sighup'])) {
     $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
 }
 
 $msg = '';
@@ -84,10 +85,12 @@ if (isset($_POST['company_otp_submit'])) {
     $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
+
 
 
     $insert = "INSERT INTO tbl_registration (name, mobile, email, password)
-    VALUES ('{$name}','{$mobile}','{$email}','{$password}')";
+             VALUES ('{$name}','{$mobile}','{$email}','{$password}')";
 
 
 
@@ -96,8 +99,8 @@ if (isset($_POST['company_otp_submit'])) {
         if ($conn->query($insert)) {
 
             $debug = true;
-            
-            $message = "Your OTP is ".$otp." to verify your phone number with sahardirectory.com Pl doesn't share this with anyone else. Thanks Team Sahar Directory (Ekaum Enterprises)";
+
+            $message = "Your OTP is " . $otp . " to verify your phone number with sahardirectory.com Pl doesn't share this with anyone else. Thanks Team Sahar Directory (Ekaum Enterprises)";
             $rf = SMSSend($mobile, $message, '1707165665533059542', $debug);
             echo '<br><br>';
             $um = SMSSend($mobile,  $msg,  '1707165665521396509', $debug);
@@ -108,13 +111,13 @@ if (isset($_POST['company_otp_submit'])) {
         }
 
         header("location: {$hostname}index.php");
-
     } else {
         $msg = 'Not Registered. You entered wrong OTP. Please Retry';
         echo '<script>alert("' . $msg . '")</script>';
         // echo '<script>window.location="add-company.php"</script>';
     }
 }
+
 
 ?>
 
@@ -141,7 +144,7 @@ if (isset($_POST['company_otp_submit'])) {
                             <form class="submit-form" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                                 <div class="form-group">
                                     <label class="mb-1">Mobile No.</label>
-                                    <input type="text" class="form-control rounded mobile" name="mobile" value="<?= $mobile ?>" >
+                                    <input type="text" class="form-control rounded mobile" name="mobile" value="<?= $mobile ?>">
                                     <span id="mainphone" style="color:red"></span>
                                 </div>
                                 <div class="col-sm-12">
@@ -167,6 +170,7 @@ if (isset($_POST['company_otp_submit'])) {
                                 <input type="hidden" name="mobile" value="<?= $mobile ?>" />
                                 <input type="hidden" name="email" value="<?= $email ?>" />
                                 <input type="hidden" name="password" value="<?= $password ?>" />
+                                <input type="hidden" name="cpassword" value="<?= $cpassword ?>" />
                             </form>
 
                             <?php

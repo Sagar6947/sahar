@@ -14,6 +14,7 @@ if (isset($_POST['save'])) {
 	$mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
 	$password = mysqli_real_escape_string($conn, $_POST['password']);
+	$cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
 
 	$sql = "SELECT email FROM tbl_registration WHERE email = '{$email}'";
 
@@ -22,12 +23,16 @@ if (isset($_POST['save'])) {
 	if (mysqli_num_rows($result) > 0) {
 		echo "<p style='color:red;text-align:center;margin: 10px 0;'>UserName already Exists.</p>";
 	} else {
-		$sql1 = "INSERT INTO tbl_registration (name, mobile, email, password)
-				VALUES ('{$name}','{$mobile}','{$email}','{$password}')";
-		if (mysqli_query($conn, $sql1)) {
-			header("Location: {$hostname}login.php");
+		if ($cpassword != $password) {
+			echo "<p style='color:red;text-align:center;margin: 10px 0;'>Password not matched.</p>";
 		} else {
-			echo "<p style='color:red;text-align:center;margin: 10px 0;'>Can't Insert User.</p>";
+			$sql1 = "INSERT INTO tbl_registration (name, mobile, email, password)
+				VALUES ('{$name}','{$mobile}','{$email}','{$password}')";
+			if (mysqli_query($conn, $sql1)) {
+				header("Location: {$hostname}login.php");
+			} else {
+				echo "<p style='color:red;text-align:center;margin: 10px 0;'>Can't Insert User.</p>";
+			}
 		}
 	}
 }
@@ -84,7 +89,7 @@ if (isset($_POST['save'])) {
 								</div>
 								<div class="form-group cpassword">
 									<label class="mb-1">Confirm Password</label>
-									<input type="password" class="form-control rounded" name="password" required>
+									<input type="password" class="form-control rounded" name="cpassword" required>
 									<i class="fas fa-eye"></i>
 								</div>
 

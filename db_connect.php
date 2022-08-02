@@ -3,7 +3,7 @@
 // $hostname = "https://webangeltech.com/sahardirectory/";
 $hostname = "http://localhost/sahar/";
 
-$conn = mysqli_connect("localhost", "root", "", "sahar-directory") or die("database  " . mysqli_error($conn));
+$conn = mysqli_connect("localhost", "root", "", "sahardirectory") or die("database  " . mysqli_error($conn));
 
 // $conn = mysqli_connect("localhost", "exzpblvz_sahar_user", "d?Ec(YNe,d}h", "exzpblvz_sahar_db") or die("database  " . mysqli_error($conn));
 

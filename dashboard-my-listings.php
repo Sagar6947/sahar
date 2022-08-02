@@ -5,7 +5,7 @@ if(!isset($_SESSION["username"])){
   header("Location: {$hostname}login.php");
 }
 ?>
-?>
+
 
 
 <div id="main-wrapper">

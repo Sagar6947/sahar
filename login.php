@@ -79,7 +79,7 @@ if (isset($_SESSION["username"])) {
 										while ($row = mysqli_fetch_assoc($result)) {
 											$_SESSION["username"] = $row['mobile'];
 											$_SESSION["name"] = $row['name'];
-											$_SESSION["id"] = $row['rgid'];
+											// $_SESSION["id"] = $row['rgid'];
 
 											header("Location: {$hostname}dashboard.php");
 										}
